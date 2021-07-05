@@ -1,17 +1,26 @@
 const router = require("express").Router();
 
-const { getProducts } = require("../controllers/products.controller");
+const {
+  getProducts,
+  createProduct,
+  getProductById,
+  deleteProduct,
+  coutProducts,
+  updateProduct,
+} = require("../controllers/products.controller");
 
 // los parametros req & res van embebidos en la funcion que se manda a
 // llamar para su ejecucion con la ruta
 router.get("/products", getProducts);
 
-// router.get('products', getProductById)
+router.post("/create-product", createProduct);
 
-// router.post('createProduct', createProduct)
+router.get("/products/count", coutProducts);
 
-// router.delete('deleteProduct', deleteProduct)
+router.get("/product-by-id/:id", getProductById);
 
-// router.put('updateProduct', updateProduct)
+router.delete("/delete-product/:id", deleteProduct);
+
+router.put("/update-product/:id", updateProduct);
 
 module.exports = router;

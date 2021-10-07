@@ -11,9 +11,3 @@ npm install
 ```bash
 npm run start
 ```
-
-
-### Build the app for production
-```bash
-npm run build
-```
